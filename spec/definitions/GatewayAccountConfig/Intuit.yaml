@@ -1,0 +1,26 @@
+description: Intuit Gateway config
+allOf:
+  -
+    $ref: "#/definitions/GatewayAccount"
+  -
+    type: "object"
+    required:
+     - "gatewayConfig"
+    properties:
+      gatewayConfig:
+        type: object
+        properties:
+          clientId:
+            type: string
+            description: The Intuit client_id key
+          clientSecret:
+            type: string
+            description: The Intuit client_secret key
+          redirectUrl:
+            type: string
+            description: Intuit Gateway redirect url for OAuth2 process
+            format: url
+        required:
+          - "clientId"
+          - "clientSecret"
+          - "redirectUrl"
